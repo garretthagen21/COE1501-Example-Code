@@ -1,9 +1,11 @@
+
+
 class LinearTable{
 	public final int size = 7;
-	public HashItem[] table = HashItem[Size];
+	public HashItem[] table = new HashItem[size];
 	
 	public int code(String key) {
-		return (Math.abs(key.hashcode())%size);
+		return (Math.abs(key.hashCode())%size);
 	}
 	public boolean add(String key,String value) {
 		int prob;
@@ -28,7 +30,7 @@ class LinearTable{
 					table[prob] = new HashItem(key,value);
 				}
 				else {
-					if(prob == table.length-1)){
+					if(prob == table.length-1){
 						prob = 0;
 					}
 					else {
@@ -40,11 +42,13 @@ class LinearTable{
 				return false;
 			}
 			else {
-				return true;
+			 return true;
 			}
+			
 				
 			
 		}
+		return false;
 	}
 	
 	public boolean delete(String key) {
